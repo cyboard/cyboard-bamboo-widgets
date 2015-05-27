@@ -1,0 +1,24 @@
+<div class="content">
+    <p class="failed-report" ng-switch="failing > 0">
+        <span ng-switch-when="true">{{ failing }} / {{ builds.length }} RED</span>
+        <span ng-switch-when="false">{{ builds.length }} GREEN</span>
+    </p>
+    <div class="build-status-bar successful">
+        <div ng-style="{width: (failing / builds.length * 100) + '%'}" class="fail-bar progress failed"></div>
+    </div>
+    <h2>HALL OF SHAME</h2>
+    <div class="build-breakers">
+        <div ng-repeat="build in builds | filter:{success: false} " class="build" ng-class="{unassigned: build.responsible.length === 0 }">
+            <div class="plan-name">
+                <a href="{{ build.link }}">
+                    {{ build.planName}}
+                    <span ng-if="build.isRefreshing">[R]</span>
+                </a>
+            </div>
+            <div class="responsibles">
+                <img ng-repeat="author in build.responsible" class="avatar" gravatar-src="author.email" gravatar-size="100" alt="{{ author.name }}">
+            </div>
+        </div>
+        <div ng-if="failing === 0" class="no-broken-builds-message uppercase">NO BROKEN BUILDS</div>
+    </div>
+</div>

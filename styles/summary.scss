@@ -1,0 +1,82 @@
+h2 {
+    font-size: 2.5vh;
+    font-weight: bold;
+}
+
+.build-status-bar {
+    margin-bottom: 3vh;
+}
+
+.progress {
+    height: 3vh;
+}
+
+.failed-report{
+    font-size: 2.5vh;
+    margin-bottom: 1vh;
+}
+
+.build-status-bar .successful {
+    width: 100%;
+}
+
+.build-status-bar .failed {
+    width: 0;
+}
+
+.failed {
+    background-color: #B72F28 !important;
+    color: white !important;
+}
+
+.successful {
+    background-color: #7ED321 !important;
+}
+
+.plan-name a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.build-breakers .build {
+    background-color: #B72F28;
+}
+
+.build {
+    padding: 10px 15px;
+    margin: 1vh 0;
+    display: flex;
+
+    .responsibles {
+        flex-grow: 0;
+        white-space: nowrap;
+    }
+
+    .responsibles img {
+        width: 4vh;
+        height: 4vh;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    .responsibles img + img {
+        margin-left: 1vh;
+    }
+
+    .plan-name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 4vh;
+        flex-grow: 1;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.no-broken-builds-message {
+    font-size: 50px;
+    text-align: center;
+    color: #454545;
+}

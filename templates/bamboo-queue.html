@@ -1,0 +1,16 @@
+<ul ng-show="(building.length + queued.length) > 0">
+    <li class="building" ng-repeat="job in building">
+        <span class="title">{{ job.planName }}</span>
+        <span class="progress">
+            <span class="bar" ng-style="{width: job.percentageComplete + '%'}" ng-class="{'overflow': job.percentageComplete > 105}"></span>
+            <span class="message">{{ job.messageText}}</span>
+        </span>
+    </li>
+    <li ng-repeat="job in queued">{{ job.planName }} waiting&hellip;</li>
+</ul>
+<p ng-show="(building.length + queued.length) === 0" class="sleeping">
+    Nothing to build
+    <span>z</span>
+    <span>z</span>
+    <span>z</span>
+</p>
