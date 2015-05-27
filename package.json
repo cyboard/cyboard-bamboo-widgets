@@ -1,16 +1,23 @@
 {
-  "name": "cyboard-bamboo-widgets",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "lodash": "^3.8.0",
-    "q": "^1.4.0",
-    "request": "^2.55.0"
-  }
+    "name": "cyboard-bamboo-widgets",
+    "version": "1.0.0",
+    "description": "Cyboard widgets for Atlassian Bamboo",
+    "keywords": [
+        "cyboard",
+        "widget",
+        "bamboo",
+        "builds",
+        "status"
+    ],
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Michael van Engelshoven <michael@van-engelshoven.de>",
+    "license": "MIT",
+    "dependencies": {
+        "lodash": "^3.8.0",
+        "q": "^1.4.0",
+        "request": "^2.55.0"
+    }
 }
