@@ -1,4 +1,4 @@
-<ul ng-show="(building.length + queued.length) > 0">
+<ul ng-hide="(building.length + queued.length) > 0">
     <li class="building" ng-repeat="job in building">
         <span class="title">{{ job.planName }}</span>
         <span class="progress">
@@ -8,9 +8,11 @@
     </li>
     <li ng-repeat="job in queued">{{ job.planName }} waiting&hellip;</li>
 </ul>
-<p ng-show="(building.length + queued.length) === 0" class="sleeping">
-    Nothing to build
-    <span>z</span>
-    <span>z</span>
-    <span>z</span>
-</p>
+<div ng-hide="(building.length + queued.length) === 0" class="sleeping">
+    <p class="text">Nothing to build</p>
+    <div class="animation">
+        <span>z</span>
+        <span>z</span>
+        <span>z</span>
+    </div>
+</div>
