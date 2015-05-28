@@ -87,12 +87,15 @@ function loadResults(request) {
     return function(keys) {
 
         var requests = keys.map(function(key) {
-            return request('result/' + key + '/latest?expand=changes');
+            return request('result/' + key + '/latest?expand=changes')
+                .catch(function(error) {
+                    return null;
+                });
         })
 
         return Q.all(requests).then(function(results) {
             return results.filter(function(result) {
-                return result.plan && result.plan.enabled;
+                return result && result.plan && result.plan.enabled;
             });
         })
     }
