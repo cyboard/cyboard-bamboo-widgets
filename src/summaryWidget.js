@@ -57,7 +57,7 @@ function normalizePlanKeys(keys, request) {
         } else if (match[2] !== '*' && match[3] !== '*') {
             key = Q(key);
         } else {
-            key = request('project/' + match[1] + '?expand=plans.plan.branches').then(function (project) {
+            key = request('project/' + match[1] + '?expand=plans.plan.branches&maxResults=200').then(function (project) {
                 var subKeys = []
                 project.plans.plan.forEach(function (plan) {
                     if (match[2] === '*' || match[2] === plan.key) {
