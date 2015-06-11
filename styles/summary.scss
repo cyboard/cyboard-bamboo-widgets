@@ -49,7 +49,7 @@ h2 {
     font-size: 2vh;
 
     .responsibles {
-        flex-grow: 0;
+        flex: 0 1 auto;
         white-space: nowrap;
     }
 
@@ -68,7 +68,8 @@ h2 {
         overflow: hidden;
         text-overflow: ellipsis;
         line-height: 4vh;
-        flex-grow: 1;
+        flex: 1;
+        padding-right: 0.5em;
     }
 }
 
