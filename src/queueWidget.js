@@ -83,9 +83,14 @@ function loadData(host, authHeader, timeout) {
     };
 
     request(options, function(error, response, body) {
+
         if (error) {
             return deferred.reject(error);
         }
+
+        if(response.statusCode !== 200) {
+            return deferred.reject('Error ' + response.statusCode + ': ' + response.statusMessage);
+        };
 
         try {
             var builds = JSON.parse(body).builds;

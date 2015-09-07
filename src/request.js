@@ -17,8 +17,10 @@ module.exports = function createRequest(options) {
             if (response.statusCode !== 200) {
                 try {
                     var message = JSON.parse(body).message
-                } catch (e) {}
-                return deferred.reject(message || response.statusMessage);
+                } catch (e) {
+                    return deferred.reject('Error ' + response.statusCode + ': ' + response.statusMessage);
+                }
+                return deferred.reject(message);
             }
 
             deferred.resolve(JSON.parse(body));
