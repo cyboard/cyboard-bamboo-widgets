@@ -129,8 +129,12 @@ function extractAuthorsFromChanges(changes) {
         }
     });
 
+    authors = _.filter(authors, function (author) {
+        return !!author;
+    });
+
     authors = _.unique(authors, function (author) {
-        return author.name
+        return author.name;
     });
 
     return authors;
